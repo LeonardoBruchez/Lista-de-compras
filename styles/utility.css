@@ -1,0 +1,23 @@
+.desktop-only {
+  display: none;
+}
+
+.mobile-only{
+  display: initial;
+}
+
+button,input {
+  border: none;
+  background: none;
+}
+
+@media (width >=65rem) {
+  .desktop-only {
+    display: initial;
+  }
+
+  .mobile-only{
+    display: none;
+  }
+
+}

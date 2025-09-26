@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de compras</title>
+  <link rel="stylesheet" href="styles/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <header class="desktop-only">
+      <div>
+        <img src="assets/title.svg" alt="">
+        <h1>quicklist</h1>
+      </div>
+    </header>
+    <section>
+      <a href="#"> &lt- Voltar </a>
+      <h2>Compras da semana</h2>
+      <form method="post" id="shopping-list-form">
+        <div class="input-group"> 
+          <input type="text" placeholder="Adicione um novo item" name="addNewItem" id="addNewItem" class="addNewItemInput">
+          <button class="buttonPink" type="submit">Adicionar item</button>
+        </div>
+
+        <div id="buttons-wrapper">
+          <label class="shopping-item">
+            <input type="checkbox" name="shopping-items" value="pão-de-forma" id="pãoDeForma">
+            <span class="custom-checkbox"></span>
+            <span>Pão de forma</span>
+            <button type="button" class="delete-btn" aria-label="Remover item">
+              <img src="assets/trash.svg" alt="">
+            </button>
+          </label>
+          
+          <label class="shopping-item">
+            <input type="checkbox" name="shopping-items" value="café-preto" id="caféPreto">
+            <span class="custom-checkbox"></span>
+            <span>Café preto</span>
+            <button type="button" class="delete-btn" aria-label="Remover item">
+              <img src="assets/trash.svg" alt="">
+            </button>
+          </label>
+          
+          <label class="shopping-item">
+            <input type="checkbox" name="shopping-items" value="suco-de-laranja" id="sucoDeLaranja">
+            <span class="custom-checkbox"></span>
+            <span>Suco de laranja</span>
+            <button type="button" class="delete-btn" aria-label="Remover item">
+              <img src="assets/trash.svg" alt="">
+            </button>
+          </label>
+          
+          <label class="shopping-item">
+            <input type="checkbox" name="shopping-items" value="bolacha" id="bolacha">
+            <span class="custom-checkbox"></span>
+            <span>Bolacha</span>
+            <button type="button" class="delete-btn" aria-label="Remover item">
+              <img src="assets/trash.svg" alt="">
+            </button>
+          </label>
+        </div>
+      </form>
+
+      <div id="alertbox">
+        <img src="assets/icon.svg" alt="">
+        <span>
+          O item foi removido da lista
+        </span>
+        <img src="assets/X.svg" alt="">
+      </div>
+    </section>
+
+  </main>
+<script src="scripts.js"></script>
+</body>
+</html>

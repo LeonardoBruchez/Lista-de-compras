@@ -1,0 +1,182 @@
+main {
+  max-width: 390px;
+  width: 100%;
+  margin: auto;
+  padding-inline: 2rem;
+  & section {
+    display: grid;
+    margin-top: 2.125rem;
+    & a {
+      appearance: none;
+      text-decoration: none;
+      color: var(--color-brand);
+    }
+
+    & h2 {
+      margin-block: 1.25rem 2.5rem;
+      font: 700 1.5rem/2rem var(--ff);
+    }
+
+    & .input-group {
+      display: grid;
+      & .addNewItemInput {
+        padding-block: 11px;
+        outline: 2px solid var(--border-primary);
+        text-align: left;
+        padding-inline: 18px 0;
+        border-radius: 12px;
+        font: 400 1rem/1.4 var(--ff);
+        width: 100%;
+
+        &:hover {
+          outline: 2px solid var(--border-hover);
+        }
+
+        &:focus {
+          outline: 2px solid var(--color-brand);
+        }
+      }
+
+      & button.buttonPink {
+        margin-block: 1rem 2.5rem;
+        background-color: var(--color-brand);
+        color: var(--always-white);
+        padding-block: 0.75rem;
+        border-radius: 0.75rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--color-brand-hover);
+        }
+      }
+    }
+
+    & #buttons-wrapper{
+      display: grid;
+      gap: 0.75rem;
+      
+
+      & input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        margin: 0;
+      }
+
+
+      .custom-checkbox {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        flex-shrink: 0;
+        margin-right: 0.75rem; 
+        background-image: url('../assets/checkbox-default.svg'); 
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      
+      input[type="checkbox"]:checked + .custom-checkbox {
+        background-image: url('../assets/checkbox-checked.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 1;
+      }
+
+      .shopping-item {
+        display: flex;
+        align-items: center;
+        padding: 12.5px 12px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        width: 100%;
+
+        &:hover input:not(:checked) + .custom-checkbox{
+          background-image: url('../assets/checkbox-hover.svg'); 
+        }
+
+        & span {
+          color: var(--content-secondary);
+          font: 500 1rem/24px var(--ff);
+          margin-left: 0.75rem;
+        }
+        
+        .delete-btn {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 4px;
+          margin-left: auto;
+        }
+      }
+    }
+
+
+
+
+    & #alertbox {
+      display: none;
+      background-color: var(--color-danger);
+      color: var(--always-white);
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      height: 2.75rem;
+      /* display: flex; */
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 2.2rem;
+      & span {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+@media (width >=64rem) {
+
+    main {
+      max-width: 627px;
+      margin: auto;
+      margin-top: 1.56rem;
+      & header {
+        & >div {
+          display: flex;
+          justify-content: center;
+          gap: 0.520rem;
+          & h1 {
+            font: 700 26.67px/40px "Inter";
+          }
+        }
+      }
+      & section {
+        & .input-group {
+          display: grid;
+          grid-template-columns: 71.93% 25.52%;
+          gap: 1rem;
+
+          & .addNewItemInput{
+            height: 44px;
+          }
+
+          & button.buttonPink {
+            margin-block:0
+          }
+        }
+
+        & #buttons-wrapper {
+          margin-top: 2.5rem;
+        }
+      }
+    }
+    
+  }
+
+/* Seletor de emergência para checkbox checked */
+#buttons-wrapper .shopping-item input[type="checkbox"]:checked + .custom-checkbox {
+  background-image: url('../assets/checkbox-checked.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
